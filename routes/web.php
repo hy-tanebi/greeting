@@ -18,8 +18,3 @@ Route::get('/', function () {
 });
 
 Route::get('/comments/{comment}', [App\Http\Controllers\Greeting::class, 'greed']);
-
-
-
-// Route::get('/comments/freeword/{comment}', [App\Http\Controllers\MessageController2::class, 'comment']);
-// Route::get('/comments/random', [App\Http\Controllers\MessageController3::class, 'random']);

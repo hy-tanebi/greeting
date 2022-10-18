@@ -10,9 +10,6 @@ class greeting extends Controller
     public function greed($comment)
     {
 
-        $array = ["おはよう", "こんにちは", "こんばんは", "おやすみなさい"];
-        $random = array_rand($array);
-
         switch ($comment) {
             case 'morning':
                 $comment = '朝のあいさつ';
@@ -32,6 +29,8 @@ class greeting extends Controller
                 break;
             case 'random':
                 $comment = 'ランダムなメッセージ';
+                $array = ["おはよう", "こんにちは", "こんばんは", "おやすみなさい"];
+                $random = array_rand($array);
                 $greed =  $array[$random];
                 break;
         };
@@ -39,18 +38,4 @@ class greeting extends Controller
 
         return view('greed.morning', ['comment' => $comment, 'greed' => $greed]);
     }
-
-
-    // public function comment($comment)
-    // {
-    //     return view('freeword.index', ['comment' => $comment]);
-    // }
-
-    // public function random()
-    // {
-    //  $array = ["おはよう", "こんにちは", "こんばんは", "おやすみなさい"];
-    //     $random = array_rand($array);
-
-    //     return view('random.index', ['random' => $array[$random]]);
-    // }
 }
